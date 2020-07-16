@@ -1,17 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" \
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="./assets/styles/index.scss"> -->
+
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Welcome to Tic Tac Toe!</h1>
+      <button id='restartButton' type="button" class="btn btn-lg btn-primary">Restart!</button>
+    </div>
+  </div>
+  
+  <p id='message'></p>
+
+  <!-- Signup view -->
+  <div class='signup-view'>
+    <form id='signup'>
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" class="form-control" name="credentials[email]"
+          placeholder="Please enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" class="form-control" name="credentials[password]"
+          placeholder="Please enter your password">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Confirm Password</label>
+        <input type="password" class="form-control" name="credentials[password_confirmation]"
+          placeholder="Please re-enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary">Sign up!</button>
+      <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
+    </form>
+  </div>
+
+  <!-- Signin view -->
+  <div class='signin-view'>
+    <form id='signin'>
+      <div class="form-group">
+        <label for="signin-email">Email</label>
+        <input type="text" class="form-control" name="credentials[email]"
+          placeholder="Please enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="signin-password">Password</label>
+        <input type="password" class="form-control" name="credentials[password]"
+          placeholder="Please enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in!</button>
+      <!-- <button type="submit" class="btn-sml btn-info" id='signup-button'>Sign up</button> -->
+      <a class="btn btn-sm btn-outline-info" id='signup-button' role="button">Sign up</a>
+    </form>
+  </div>
+
+  <!-- Main game board -->
+  <div class='game-board-view'>
+    <table class='game-board'>
+      <tr id='top-row'>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id='middle-row'>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id='bottom-row'>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
 </html>
