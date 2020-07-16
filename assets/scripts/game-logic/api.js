@@ -22,8 +22,6 @@ const resetGame = function () {
 }
 
 const makeMove = function (move) {
-    console.log('this is my move ', move)
-    console.log('this ist the game id ', store.game._id)
     return $.ajax({
         headers: {
             Authorization: 'Bearer ' + store.user.token,

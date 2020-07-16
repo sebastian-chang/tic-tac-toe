@@ -1,4 +1,5 @@
 const store = require('../store')
+const check = require('./game-check')
 
 const startNewGameSuccess = function (response) {
     $('#message').text('Let us begin!')
@@ -12,6 +13,8 @@ const startNewGameFailue = function () {
 
 const resetGameSuccess = function() {
     $('#message').text('Game has been reset!')
+    $('.game-board-view').hide()
+    $('.new-game').show()
 }
 
 const resetGameFailure = function() {
@@ -21,6 +24,10 @@ const resetGameFailure = function() {
 const makeMoveSuccess = function (response) {
     $('#message').text('Nice Move!')
     store.game = response.game
+    if(response.game.over){
+        $('#message').text('no more moves')
+    }
+    // check.gameWinner()
 }
 
 const makeMoveFailure = function () {
