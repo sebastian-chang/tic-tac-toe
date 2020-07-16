@@ -17,6 +17,12 @@ const onSignIn = function (event) {
         .then(ui.signInSuccess)
         .catch(ui.signInFailure)
 }
+const onLogout = function (event) {
+    event.preventDefault()
+    api.logout()
+        .then(ui.logoutSuccess)
+        .catch(ui.logoutFailure)
+}
 
 const onSignUpSwitch = function (event) {
     event.preventDefault()
@@ -32,4 +38,5 @@ module.exports = {
     onSignIn,
     onSignUpSwitch,
     onSignInSwitch,
+    onLogout,
 }

@@ -1,3 +1,5 @@
+const store = require('../store')
+
 const signUpSuccess = function () {
     $('#message').text('Successfully signed up!')
     $('.signin-view').show()
@@ -7,13 +9,24 @@ const signUpFailure = function () {
     $('#message').text('Sign up failed')
 }
 
-const signInSuccess = function () {
+const signInSuccess = function (response) {
     $('#message').text('Successfully signed up!')
+    store.user = response.user
     $('.game-board-view').show()
     $('.signin-view').hide()
 }
 const signInFailure = function () {
     $('#message').text('Could not log in.  Please try again.')
+}
+
+const logoutSuccess = function () {
+    $('#message').text('Successfully logged out!')
+    $('.signin-view').show()
+    $('.signup-view').hide()
+    $('.game-board-view').hide()
+}
+const logoutFailure = function () {
+    $('#message').text('Failed to logout.')
 }
 
 const signUpSwitch = function () {
@@ -32,4 +45,6 @@ module.exports = {
     signInSuccess,
     signUpSwitch,
     signInSwitch,
+    logoutFailure,
+    logoutSuccess,
 }

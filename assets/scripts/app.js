@@ -46,4 +46,5 @@ $(() => {
   $('#signin').on('submit', authEvents.onSignIn)
   $('#signup-button').on('click', authEvents.onSignUpSwitch)
   $('#signin-button').on('click', authEvents.onSignInSwitch)
+  $('#logout-button').on('click', authEvents.onLogout)
 })
