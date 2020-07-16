@@ -6,45 +6,25 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const authEvents = require('./auth/events')
+const gameEvents = require('./game-logic/events')
 
 $(() => {
   // your JS code goes here
-  const restart = $('#restartButton')
-  const cells = $('td')
+  const restart = $('#restart')
+  const cells = $('.game-board td')
 
-  let clicked = 0
+  // Hide views
+  $('.signup-view, .game-board-view, .logged-in, .new-game, #restart').hide()
 
-  cells.on("click", function () {
-    if (clicked == 0) {
-      $(this).text('X')
-      $(this).css('color', 'blue')
-      clicked++
-    }
-    else if (clicked == 1) {
-      $(this).text('O')
-      $(this).css('color', 'red')
-      clicked++
-    }
-    else if (clicked == 2) {
-      $(this).text('')
-      clicked = 0
-    }
-    // else{
-    //     clicked = 0;
-    // }
-  })
-
-  restart.on('click', function() {
-    cells.each(function () {
-      $(this).text('')
-    })
-  })
-
-  $('.signup-view').hide()
-  $('.game-board-view').hide()
+  // Authorization event listeners
   $('#signup').on('submit', authEvents.onSignUp)
   $('#signin').on('submit', authEvents.onSignIn)
   $('#signup-button').on('click', authEvents.onSignUpSwitch)
   $('#signin-button').on('click', authEvents.onSignInSwitch)
   $('#logout-button').on('click', authEvents.onLogout)
+
+  // Game event listeners
+  $('#start-game').on('click', gameEvents.onStartNewGame)
+  cells.on('click', gameEvents.onCellClick)
+  restart.on('click', gameEvents.onResetGame)
 })

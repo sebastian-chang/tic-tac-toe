@@ -4,7 +4,7 @@ let apiUrl
 const apiUrls = {
   production: 'https://tic-tac-toe-api-production.herokuapp.com',
   // development: 'http://localhost:4741'
-  development: 'https://tic-tac-toe-api-production.herokuapp.com'
+  development: 'https://tic-tac-toe-api-development.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {

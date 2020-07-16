@@ -10,9 +10,11 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-    $('#message').text('Successfully signed up!')
+    $('#message').text('Successfully signed in!')
     store.user = response.user
-    $('.game-board-view').show()
+    console.log(response.user.token)
+    $('.new-game, .logged-in').show()
+    // $('.new-game').modal('show')
     $('.signin-view').hide()
 }
 const signInFailure = function () {

@@ -7,10 +7,6 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" \
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="./assets/styles/index.scss"> -->
-
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -21,11 +17,11 @@
   <div class="container">
     <div class="jumbotron">
       <h1>Welcome to Tic Tac Toe!</h1>
-      <button id='restartButton' type="button" class="btn btn-lg btn-primary">Restart!</button>
-      <a class="btn btn-danger game-board-view" id='logout-button' role="button">Logout</a>
+      <button id='restart' type="button" class="btn btn-lg btn-primary">Restart!</button>
+      <a class="btn btn-danger logged-in" id='logout-button' role="button">Logout</a>
     </div>
   </div>
-  
+
   <p id='message'></p>
 
   <!-- Signup view -->
@@ -56,8 +52,7 @@
     <form id='signin'>
       <div class="form-group">
         <label for="signin-email">Email</label>
-        <input type="text" class="form-control" name="credentials[email]"
-          placeholder="Please enter your email address">
+        <input type="text" class="form-control" name="credentials[email]" placeholder="Please enter your email address">
       </div>
       <div class="form-group">
         <label for="signin-password">Password</label>
@@ -70,23 +65,31 @@
     </form>
   </div>
 
+  <!-- New game question -->
+  <div class='card new-game' tabindex='-1' role='dialog'>
+    <div class='card-body'>
+      <h5 class='card-title'>Would you like a play a game?</h5>
+      <a class="btn btn-success" id='start-game' role="button">Yes</a>
+    </div>
+  </div>
+
   <!-- Main game board -->
   <div class='game-board-view'>
     <table class='game-board'>
       <tr id='top-row'>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id='0'></td>
+        <td id='1'></td>
+        <td id='2'></td>
       </tr>
       <tr id='middle-row'>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id='3'></td>
+        <td id='4'></td>
+        <td id='5'></td>
       </tr>
       <tr id='bottom-row'>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id='6'></td>
+        <td id='7'></td>
+        <td id='8'></td>
       </tr>
     </table>
   </div>
