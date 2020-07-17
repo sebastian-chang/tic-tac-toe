@@ -1,8 +1,9 @@
 const store = require('../store')
 
 // Check to see if someone won the game
-const gameWinner = function () {
+const gameWinner = function (newMove) {
     const gameBoard = store.game.cells
+    gameBoard[newMove.game.cell.index] = newMove.game.cell.value
     const resultChecks = []
 
     // Create a new array with all possible winning combinations
@@ -30,8 +31,8 @@ const gameWinner = function () {
 // Check to see if the game has been completed
 // First checks to see if anyone has won, checks to see if any moves remain.  
 // If no moves left Cat's game
-const completeGame = function () {
-    if (gameWinner()) {
+const completeGame = function (newMove) {
+    if (gameWinner(newMove)) {
         console.log('we have a winner')
         return true
     }

@@ -56,7 +56,7 @@ const onCellClick = function () {
         }
         // Check to see if the game is over
         // Send move to our API
-        playerMove.game.over = check.completeGame()
+        playerMove.game.over = check.completeGame(playerMove)
         api.makeMove(playerMove)
             .then(ui.makeMoveSuccess)
             .catch(ui.makeMoveFailure)
