@@ -4,24 +4,24 @@ const store = require('../store')
 const check = require('./game-check')
 
 const onStartNewGame = function () {
+    event.preventDefault()
+    ui.clearBoard()
     let i = 0
-    $('.game-board td').each(function() {
+    $('.game-board td').each(function () {
         $(this).data('index', i)
         i++
     })
-    event.preventDefault()
     api.startNewGame()
         .then(ui.startNewGameSuccess)
         .catch(ui.startNewGameFailue)
+    onGetGames()
 }
 
 const onResetGame = function () {
     api.resetGame()
         .then(ui.resetGameSuccess)
         .catch(ui.resetGameFailure)
-    $('.game-board td').each(function () {
-        $(this).text('')
-    })
+    ui.clearBoard()
 }
 
 const onCellClick = function () {
@@ -38,7 +38,7 @@ const onCellClick = function () {
         }
     }
 
-    if (store.game.over){
+    if (store.game.over) {
         $('#message').text('The game is over. Please start a new one.')
         return
     }
@@ -47,13 +47,13 @@ const onCellClick = function () {
     if ($(this).text().length === 0) {
         // If not mark square according to player's turn
         // Add results to our playerMove object
-        if (clicked == 0) {
+        if (clicked === 0) {
             $(this).text('X')
             $(this).css('color', 'blue')
             playerMove.game.cell.value = 'X'
             playerMove.game.cell.index = $(this).data().index
         }
-        else if (clicked == 1) {
+        else if (clicked === 1) {
             $(this).text('O')
             $(this).css('color', 'red')
             playerMove.game.cell.value = 'O'
@@ -71,10 +71,16 @@ const onCellClick = function () {
     }
 }
 
+const onGetGames = function () {
+    api.getGames()
+        .then(ui.showGamesPlayedSuccess)
+        .catch(ui.showGamesPlayedFailure)
+}
 
 
 module.exports = {
     onStartNewGame,
     onCellClick,
     onResetGame,
+    onGetGames,
 }

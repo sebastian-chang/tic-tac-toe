@@ -1,4 +1,5 @@
 const store = require('../store')
+const gameEvents = require('../game-logic/events')
 
 const signUpSuccess = function () {
     $('#message').text('Successfully signed up!')
@@ -13,6 +14,7 @@ const signInSuccess = function (response) {
     $('#message').text('Successfully signed in!')
     store.user = response.user
     console.log(response.user.token)
+    gameEvents.onGetGames()
     $('.new-game, .logged-in').show()
     // $('.new-game').modal('show')
     $('.signin-view').hide()
