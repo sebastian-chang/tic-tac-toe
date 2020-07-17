@@ -28,6 +28,7 @@ $(() => {
 
   // Game event listeners
   $('#start-game').on('click', gameEvents.onStartNewGame)
+  $('#no-game').on('click', authEvents.onLogout)
   cells.on('click', gameEvents.onCellClick)
   restart.on('click', gameEvents.onResetGame)
 })
