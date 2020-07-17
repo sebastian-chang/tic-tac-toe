@@ -33,10 +33,29 @@ const onSignInSwitch = function (event) {
     ui.signInSwitch()
 }
 
+const onChangePassword = function (event) {
+    event.preventDefault()
+    const formData = getFormFields(event.target)
+    api.changePassword(formData)
+        .then(ui.changePasswordSuccess)
+        .catch(ui.changePasswordFailure)
+}
+const onChangePasswordSwitch = function (event) {
+    event.preventDefault()
+    ui.changePasswordSwitch()
+}
+const onChangePasswordCancel = function (event) {
+    event.preventDefault()
+    ui.changePasswordCancel()
+}
+
 module.exports = {
     onSignUp,
     onSignIn,
     onSignUpSwitch,
     onSignInSwitch,
     onLogout,
+    onChangePassword,
+    onChangePasswordSwitch,
+    onChangePasswordCancel,
 }

@@ -28,6 +28,7 @@ const makeMoveSuccess = function (response) {
         $('#message').text('no more moves')
     }
     // check.gameWinner()
+    // console.log(store.game)
 }
 
 const makeMoveFailure = function () {

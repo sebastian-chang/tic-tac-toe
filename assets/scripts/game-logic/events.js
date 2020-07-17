@@ -38,6 +38,11 @@ const onCellClick = function () {
         }
     }
 
+    if (store.game.over){
+        $('#message').text('The game is over. Please start a new one.')
+        return
+    }
+
     // Check to see if a square is already taken up
     if ($(this).text().length === 0) {
         // If not mark square according to player's turn
