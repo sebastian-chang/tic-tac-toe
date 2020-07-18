@@ -5,7 +5,7 @@ const gameEvents = require('./events')
 const startNewGameSuccess = function (response) {
     $('#message').text('Let us begin!')
     $('.game-board-view, #restart').show()
-    $('.new-game').hide()
+    $('.new-game, #cats-game').hide()
     store.game = response.game
     // gameEvents.onGetGames()
     // showGamesPlayedSuccess()
@@ -25,16 +25,19 @@ const resetGameFailure = function () {
 }
 
 const makeMoveSuccess = function (response) {
-    $('#message').text('Nice Move!')
     store.game = response.game
+    if (store.game.__v % 2 === 1){
+        $('#message').text('Nice Move X!')
+    }
+    else{
+        $('#message').text('Nice Move O!')
+    }
     if (response.game.over) {
         $('#message').text('')
         $('.game-over-modal').modal('show')
         $('#restart').hide()
         $('.new-game').show()
     }
-    // check.gameWinner()
-    // console.log(store.game)
 }
 
 const makeMoveFailure = function () {

@@ -14,21 +14,43 @@
 </head>
 
 <body>
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top container">
+    <span class="navbar-brand">Tic-Tac-Toe</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" id='restart' role="button">Restart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link logged-in change-password" id='change-password-button' role="button">Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link logged-in" id='logout-button' role="button">Logout</a>
+        </li>
+        <li>
+          <span class='games-played logged-in'></span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Jumbo banner -->
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Welcome to Tic Tac Toe!</h1>
-      <button id='restart' type="button" class="btn btn-lg btn-primary">Restart!</button>
-      <a class="btn btn-warning logged-in change-password" id='change-password-button' role="button">Change Password</a>
-      <a class="btn btn-danger logged-in" id='logout-button' role="button">Logout</a>
-      <span class='games-played logged-in'></span>
+  <div class="">
+    <div class="jumbotron container">
+      <h1 class='row justify-content-md-center'>Welcome to Tic Tac Toe!</h1>
+      <br>
+      <p class='container row justify-content-md-center' id='message'></p>
     </div>
   </div>
 
-  <p id='message'></p>
 
   <!-- Signup view -->
-  <div class='signup-view'>
+  <div class='signup-view container'>
     <form id='signup'>
       <div class="form-group">
         <label for="signup-email">Email</label>
@@ -51,7 +73,7 @@
   </div>
 
   <!-- Signin view -->
-  <div class='signin-view'>
+  <div class='signin-view container'>
     <form id='signin'>
       <div class="form-group">
         <label for="signin-email">Email</label>
@@ -68,7 +90,7 @@
   </div>
 
   <!-- Change password view -->
-  <div class='change-password-view'>
+  <div class='change-password-view container'>
     <form id='change-password'>
       <div class="form-group">
         <label for="old-password">Old Password</label>
@@ -84,7 +106,7 @@
   </div>
 
   <!-- New game question -->
-  <div class='card new-game' tabindex='-1' role='dialog'>
+  <div class='card new-game container' tabindex='-1' role='dialog'>
     <div class='card-body'>
       <h5 class='card-title'>Would you like a play a game?</h5>
       <a class="btn btn-success" id='start-game' role="button">Yes</a>
@@ -93,21 +115,21 @@
   </div>
 
   <!-- Main game board -->
-  <div class='game-board-view'>
+  <div class='game-board-view container'>
     <table class='game-board'>
       <tr id='top-row'>
         <td id='0'></td>
-        <td id='1'></td>
+        <td class='mid-col' id='1'></td>
         <td id='2'></td>
       </tr>
       <tr id='middle-row'>
         <td id='3'></td>
-        <td id='4'></td>
+        <td class='mid-col' id='4'></td>
         <td id='5'></td>
       </tr>
       <tr id='bottom-row'>
         <td id='6'></td>
-        <td id='7'></td>
+        <td class='mid-col' id='7'></td>
         <td id='8'></td>
       </tr>
     </table>
@@ -125,6 +147,7 @@
         </div>
         <div class="modal-body">
           <p id='game-over-message'></p>
+          <p id='cats-game'><img class='img-fluid' src="./public/images/cat-tax.jpg" alt='cat tax'></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -41,6 +41,7 @@ const completeGame = function (newMove) {
     else {
         if (store.game.__v === 8) {
             $('#game-over-message').text('Cats game!')
+            $('#cats-game').show()
             return true
         }
         else {

@@ -1,19 +1,37 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
 
-td {
-    height: 150px;
-    width: 150px;
-    text-align: center;
-    /*padding: 100px;*/
-    border: 5px solid black;
-    font-size: 100px;
+.navbar {
+    background-color: $main-background-color;
+    .nav-item {
+        margin: auto 10px;
+    }
 }
-#top-row {
-    background-color: grey;
+
+.jumbotron {
+    background-color: scale-color($main-background-color, $saturation: 0%, $lightness: 60%, $alpha: 1);
+    height: auto;
+    max-height: 200px;
 }
 
 .game-board {
     margin-left: auto;
     margin-right: auto;
-    background-color: green;
+    background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 70%, $alpha: 1.0);
+    td {
+        height: 150px;
+        width: 150px;
+        text-align: center;
+        font-size: 5em;
+    }
+    #middle-row {
+        border-top: $game-board-border;
+        border-bottom: $game-board-border;
+        background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 85%, $alpha: 1.0);
+    }
+    .mid-col {
+        border-left: $game-board-border;
+        border-right: $game-board-border;
+        background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 55%, $alpha: 1.0);;
+    }
 }
