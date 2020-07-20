@@ -3,11 +3,13 @@ const ui = require('./ui')
 const store = require('../store')
 const check = require('./game-check')
 
+// Starts a new game by calling API and creating visual board with useable data
 const onStartNewGame = function () {
     event.preventDefault()
     ui.clearBoard()
     let i = 0
-    $('.game-board td').each(function () {
+    // Adds index to each cell for reference of where user is clicking
+    $('.game-board .box').each(function () {
         $(this).data('index', i)
         i++
     })
@@ -17,6 +19,7 @@ const onStartNewGame = function () {
     onGetGames()
 }
 
+// Resets game and clears the board
 const onResetGame = function () {
     api.resetGame()
         .then(ui.resetGameSuccess)
@@ -24,6 +27,7 @@ const onResetGame = function () {
     ui.clearBoard()
 }
 
+// Records the players move both to the API and to the visual board
 const onCellClick = function () {
     // Find out whose turn it is
     let clicked = store.game.__v % 2
@@ -38,6 +42,8 @@ const onCellClick = function () {
         }
     }
 
+    // If game is over and player tries to click on cell, send message and don't allow 
+    // player to make a new move by 'ending' their turn
     if (store.game.over) {
         $('#message').text('The game is over. Please start a new one.')
         return
@@ -71,6 +77,7 @@ const onCellClick = function () {
     }
 }
 
+// Gets the number of games player has played
 const onGetGames = function () {
     api.getGames()
         .then(ui.showGamesPlayedSuccess)

@@ -14,10 +14,8 @@ const signUpFailure = function () {
 const signInSuccess = function (response) {
     $('#message').text('Successfully signed in!')
     store.user = response.user
-    console.log(response.user.token)
     gameEvents.onGetGames()
     $('.new-game, .logged-in').show()
-    // $('.new-game').modal('show')
     $('.signin-view').hide()
     $('#signin').trigger('reset')
 }
@@ -68,7 +66,6 @@ const changePasswordCancel = function () {
     $('.change-password-view').hide()
     if (store.game) {
         $('.game-board-view, #change-password-button, #restart').show()
-        // $('.new-game').show()
     }
     else {
         $('.new-game, #change-password-button').show()

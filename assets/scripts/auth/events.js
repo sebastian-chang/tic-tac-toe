@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+// Sign in and Sign up functions
 const onSignUp = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
@@ -33,6 +34,7 @@ const onSignInSwitch = function (event) {
     ui.signInSwitch()
 }
 
+// Change password functions
 const onChangePassword = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
@@ -40,10 +42,12 @@ const onChangePassword = function (event) {
         .then(ui.changePasswordSuccess)
         .catch(ui.changePasswordFailure)
 }
+// Switches views to change password 
 const onChangePasswordSwitch = function (event) {
     event.preventDefault()
     ui.changePasswordSwitch()
 }
+// Cancel function incase user didn't want to change password
 const onChangePasswordCancel = function (event) {
     event.preventDefault()
     ui.changePasswordCancel()

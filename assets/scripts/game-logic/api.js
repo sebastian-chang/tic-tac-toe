@@ -1,6 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
+// Starts a new game
 const startNewGame = function () {
     return $.ajax({
         headers: {
@@ -11,6 +12,7 @@ const startNewGame = function () {
     })
 }
 
+// Restarts the previous game, deletes the current one user is playing
 const resetGame = function () {
     return $.ajax({
         headers: {
@@ -21,6 +23,7 @@ const resetGame = function () {
     })
 }
 
+// Adds a move to the game
 const makeMove = function (move) {
     return $.ajax({
         headers: {
@@ -32,6 +35,7 @@ const makeMove = function (move) {
     })
 }
 
+// Find the number of games played by user
 const getGames = function () {
     return $.ajax({
         headers: {

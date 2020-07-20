@@ -1,6 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
+// Creates a new user
 const signUp = function (formData) {
     return $.ajax({
         url: config.apiUrl + '/sign-up',
@@ -9,6 +10,7 @@ const signUp = function (formData) {
     })
 }
 
+// Logs an user in
 const signIn = function (formData) {
     return $.ajax({
         url: config.apiUrl + '/sign-in',
@@ -17,6 +19,7 @@ const signIn = function (formData) {
     })
 }
 
+// Logs an user out
 const logout = function () {
     return $.ajax({
         headers: {
@@ -27,6 +30,7 @@ const logout = function () {
     })
 }
 
+// Changes an users password
 const changePassword = function (formData) {
     return $.ajax({
         headers: {

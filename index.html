@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top container">
     <span class="navbar-brand">Tic-Tac-Toe</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -27,19 +27,20 @@
           <span class='games-played logged-in d-lg-none'></span>
         </li>
         <li class="nav-item d-lg-none">
-          <a class="nav-link" id='restart' role="button">Restart</a>
+          <a class='nav-link logged-in restart' role="button">Restart</a>
         </li>
         <li class="nav-item d-lg-none">
-          <a class="nav-link logged-in change-password" id='change-password-button' role="button">Change Password</a>
+          <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
         </li>
         <li class="nav-item d-lg-none">
-          <a class="nav-link logged-in" id='logout-button' role="button">Logout</a>
+          <a class='nav-link logged-in logout-button' role="button">Logout</a>
         </li>
         <li>
-          <div class='dropdown d-sm-none d-lg-block'>
-            <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id='account-span'><img src="/public/images/icons/person-circle.svg" alt="" width="32" height="32" title="Bootstrap"></span>
+          <div class='dropdown d-none d-lg-block'>
+            <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span id='account-span'><img src="/public/images/icons/person-circle.svg" alt="" width="32" height="32"
+                  title="Bootstrap"></span>
             </a>
             <ul class='dropdown-menu'>
               <li>
@@ -47,15 +48,15 @@
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-item">
-                <a class="nav-link" id='restart' role="button">Restart</a>
+                <a class='nav-link restart' role="button">Restart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link logged-in change-password" id='change-password-button' role="button">Change
+                <a class='nav-link logged-in change-password change-password-button' role="button">Change
                   Password</a>
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-item">
-                <a class="nav-link logged-in" id='logout-button' role="button">Logout</a>
+                <a class='nav-link logged-in logout-button' role="button">Logout</a>
               </li>
             </ul>
           </div>
@@ -65,11 +66,11 @@
   </nav>
 
   <!-- Jumbo banner -->
-  <div class="">
-    <div class="jumbotron container">
-      <h1 class='row justify-content-md-center'>Welcome to Tic Tac Toe!</h1>
-      <br>
-      <p class='container row justify-content-md-center' id='message'></p>
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid text-center">
+      <h1 class=''>Welcome to Tic-Tac-Toe!</h1>
+      <!-- <br> -->
+      <p class='' id='message'></p>
     </div>
   </div>
 
@@ -131,7 +132,7 @@
   </div>
 
   <!-- New game question -->
-  <div class='card new-game container' tabindex='-1' role='dialog'>
+  <div class='card new-game container text-center' tabindex='-1' role='dialog'>
     <div class='card-body'>
       <h5 class='card-title'>Would you like a play a game?</h5>
       <a class="btn btn-success" id='start-game' role="button">Yes</a>
@@ -141,23 +142,36 @@
 
   <!-- Main game board -->
   <div class='game-board-view container'>
-    <table class='game-board'>
+    <!-- <table class='row game-board h-100'>
       <tr id='top-row'>
-        <td id='0'></td>
-        <td class='mid-col' id='1'></td>
-        <td id='2'></td>
+        <td class='col-4 box'></td>
+        <td class='col-4 box mid-col'></td>
+        <td class='col-4 box'></td>
       </tr>
       <tr id='middle-row'>
-        <td id='3'></td>
-        <td class='mid-col' id='4'></td>
-        <td id='5'></td>
+        <td class='col-4 box'></td>
+        <td class='col-4 box mid-col'></td>
+        <td class='col-4 box'></td>
       </tr>
       <tr id='bottom-row'>
-        <td id='6'></td>
-        <td class='mid-col' id='7'></td>
-        <td id='8'></td>
+        <td class='col-4 box'></td>
+        <td class='col-4 box mid-col'></td>
+        <td class='col-4 box'></td>
       </tr>
-    </table>
+    </table> -->
+    <div class='row game-board h-100'>
+      <div class='col-4 box top-row'></div>
+      <div class='col-4 box mid-col top-row'></div>
+      <div class='col-4 box top-row'></div>
+
+      <div class='col-4 box middle-row'></div>
+      <div class='col-4 box mid-col middle-row'></div>
+      <div class='col-4 box middle-row'></div>
+
+      <div class='col-4 box bottom-row'></div>
+      <div class='col-4 box mid-col bottom-row'></div>
+      <div class='col-4 box bottom-row'></div>
+    </div>
   </div>
 
   <!-- End of game modal -->

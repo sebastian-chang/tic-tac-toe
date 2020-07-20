@@ -10,7 +10,7 @@ const gameEvents = require('./game-logic/events')
 
 $(() => {
   // your JS code goes here
-  const restart = $('#restart')
+  const restart = $('.restart')
   const cells = $('.game-board td')
 
   // Hide views
@@ -21,14 +21,14 @@ $(() => {
   $('#signin').on('submit', authEvents.onSignIn)
   $('#signup-button').on('click', authEvents.onSignUpSwitch)
   $('#signin-button').on('click', authEvents.onSignInSwitch)
-  $('#logout-button').on('click', authEvents.onLogout)
-  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('.logout-button').on('click', authEvents.onLogout)
+  $('.change-password').on('submit', authEvents.onChangePassword)
   $('#change-password-button').on('click', authEvents.onChangePasswordSwitch)
   $('#cancel-change-button').on('click', authEvents.onChangePasswordCancel)
 
   // Game event listeners
   $('#start-game').on('click', gameEvents.onStartNewGame)
   $('#no-game').on('click', authEvents.onLogout)
-  cells.on('click', gameEvents.onCellClick)
-  restart.on('click', gameEvents.onResetGame)
+  $('.game-board .box').on('click', gameEvents.onCellClick)
+  $('.restart').on('click', gameEvents.onResetGame)
 })

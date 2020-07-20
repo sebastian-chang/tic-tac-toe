@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables";
 
+// Changing background color based off main game color for navbar
 .navbar {
     background-color: $main-background-color;
     .navbar-nav .nav-item {
@@ -23,30 +24,75 @@
     }
 }
 
+// Resizing jumbotron to fit nicer with navbar.  Also changing color based off main bg color
 .jumbotron {
     background-color: scale-color($main-background-color, $saturation: 0%, $lightness: 60%, $alpha: 1);
-    height: auto;
-    max-height: 200px;
+    max-height: calc(20vh);
+    margin-top: 25px;
 }
 
+// Adjusting card width to look nicer
+.card {
+    max-width: 80vh;
+}
+
+// Sizing the game board container
+.game-board-view.container {
+    height: 70vh;
+}
+// Filling up game board and setting default background color
 .game-board {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 70%, $alpha: 1);
-    td {
-        height: 150px;
-        width: 150px;
+    max-height: calc(100vh);
+    max-width: calc(100vh);
+    // Creating box sizes to fit game board, font and alignment
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100% / 3);
         text-align: center;
-        font-size: 5em;
+        font-size: 10vh;
+        text-shadow: 2px 2px black;
+        user-select: none;
     }
-    #middle-row {
+    // Creating boarders for middle row and adding a different background color based off main bg color
+    .middle-row {
         border-top: $game-board-border;
         border-bottom: $game-board-border;
         background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 85%, $alpha: 1);
     }
+    // Creating boarders for middle column and adding a different background color based off main bg color
     .mid-col {
         border-left: $game-board-border;
         border-right: $game-board-border;
         background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 55%, $alpha: 1);
+    }
+}
+
+// Media queries for different sized screens.
+@media (max-width: 600px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+        p {
+            font-size: 3vh;
+        }
+    }
+    .card {
+        max-width: 40vh;
     }
 }

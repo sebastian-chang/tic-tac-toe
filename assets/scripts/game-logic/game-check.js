@@ -17,16 +17,13 @@ const gameWinner = function (newMove) {
 
     //  Check new array to see if there is a winner
     if (resultChecks.includes('XXX')) {
-        console.log('X won')
         $('#game-over-message').text('X has won the game!')
         return true
     }
     if (resultChecks.includes('OOO')) {
-        console.log('O won')
         $('#game-over-message').text('O has won the game!')
         return true
     }
-    // console.log(resultChecks)
     return false
 }
 
@@ -35,7 +32,6 @@ const gameWinner = function (newMove) {
 // If no moves left Cat's game
 const completeGame = function (newMove) {
     if (gameWinner(newMove)) {
-        // console.log('we have a winner')
         return true
     }
     else {
