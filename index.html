@@ -18,22 +18,47 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top container">
     <span class="navbar-brand">Tic-Tac-Toe</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li>
+          <span class='games-played logged-in d-lg-none'></span>
+        </li>
+        <li class="nav-item d-lg-none">
           <a class="nav-link" id='restart' role="button">Restart</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-lg-none">
           <a class="nav-link logged-in change-password" id='change-password-button' role="button">Change Password</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-lg-none">
           <a class="nav-link logged-in" id='logout-button' role="button">Logout</a>
         </li>
         <li>
-          <span class='games-played logged-in'></span>
+          <div class='dropdown d-sm-none d-lg-block'>
+            <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id='account-span'><img src="/public/images/icons/person-circle.svg" alt="" width="32" height="32" title="Bootstrap"></span>
+            </a>
+            <ul class='dropdown-menu'>
+              <li>
+                <div class='games-played logged-in'></div>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item">
+                <a class="nav-link" id='restart' role="button">Restart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link logged-in change-password" id='change-password-button' role="button">Change
+                  Password</a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item">
+                <a class="nav-link logged-in" id='logout-button' role="button">Logout</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
