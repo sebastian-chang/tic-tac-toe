@@ -5,7 +5,7 @@ body {
     font-family: $main-font;
 }
 
-.error{
+.error {
     color: red;
     font-weight: bold;
 }
@@ -44,6 +44,11 @@ body {
     max-width: 80vh;
 }
 
+form {
+    margin: auto;
+    width: calc(65%);
+}
+
 // Sizing the game board container
 .game-board-view.container {
     height: 70vh;
@@ -65,6 +70,9 @@ body {
         font-family: $game-font;
         text-shadow: 2px 2px black;
         user-select: none;
+        &:hover {
+            background-color: darken($color: $main-background-color, $amount: 3);
+        }
     }
     // Creating boarders for middle row and adding a different background color based off main bg color
     .middle-row {
@@ -78,8 +86,20 @@ body {
         border-right: $game-board-border;
         background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 55%, $alpha: 1);
     }
+    .letter {
+        animation: type .1s ease-out;
+    }
 }
-
+@keyframes type {
+    from {
+        font-size: 0vh;
+        opacity: 0.75;
+    }
+    to {
+        font-size: 10vh;
+        opacity: 1;
+    }
+}
 // Media queries for different sized screens.
 @media (max-width: 600px) {
     .jumbotron {
@@ -90,7 +110,7 @@ body {
         }
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .jumbotron {
         margin-top: 30px;
         max-height: calc(20vh);
@@ -103,5 +123,9 @@ body {
     }
     .card {
         max-width: 40vh;
+    }
+    form {
+        margin: auto;
+        width: 100%;
     }
 }

@@ -10,7 +10,7 @@ const onStartNewGame = function () {
     let i = 0
     // Adds index to each cell for reference of where user is clicking
     $('.game-board .box').each(function () {
-        $(this).data('index', i)
+        $(this).data('index', i).removeClass('letter')
         i++
     })
     api.startNewGame()
@@ -54,14 +54,12 @@ const onCellClick = function () {
         // If not mark square according to player's turn
         // Add results to our playerMove object
         if (clicked === 0) {
-            $(this).text('X')
-            $(this).css('color', 'blue')
+            $(this).text('X').css('color', 'blue').addClass('letter')
             playerMove.game.cell.value = 'X'
             playerMove.game.cell.index = $(this).data().index
         }
         else if (clicked === 1) {
-            $(this).text('O')
-            $(this).css('color', 'red')
+            $(this).text('O').css('color', 'red').addClass('letter')
             playerMove.game.cell.value = 'O'
             playerMove.game.cell.index = $(this).data().index
         }
