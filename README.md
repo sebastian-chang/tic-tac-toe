@@ -18,7 +18,7 @@ Once the game had successfully meet all the requirements I went back and started
 
 Below is an image of my original wireframe that helped me design the start of my project.
 
-![wireframe]([./projects/tic-tac-toc-client/public/images/Tic-Tac-Toe.jpg])
+![wireframe](/public/images/Tic-Tac-Toe.jpg)
 
 ### User Stories
 
