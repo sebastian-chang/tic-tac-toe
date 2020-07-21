@@ -1,6 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables";
 
+body {
+    font-family: $main-font;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
 // Changing background color based off main game color for navbar
 .navbar {
     background-color: $main-background-color;
@@ -54,6 +62,7 @@
         min-height: calc(100% / 3);
         text-align: center;
         font-size: 10vh;
+        font-family: $game-font;
         text-shadow: 2px 2px black;
         user-select: none;
     }

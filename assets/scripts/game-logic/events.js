@@ -45,7 +45,7 @@ const onCellClick = function () {
     // If game is over and player tries to click on cell, send message and don't allow 
     // player to make a new move by 'ending' their turn
     if (store.game.over) {
-        $('#message').text('The game is over. Please start a new one.')
+        $('#message').text('The game is over. Please start a new one.').addClass('error')
         return
     }
 
@@ -73,7 +73,7 @@ const onCellClick = function () {
             .catch(ui.makeMoveFailure)
     }
     else {
-        $('#message').text('Square taken.  Please pick another')
+        $('#message').text('Square taken.  Please pick another').addClass('error')
     }
 }
 
