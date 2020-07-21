@@ -90,7 +90,7 @@ form {
         background-color: scale-color($main-background-color, $saturation: 25%, $lightness: 55%, $alpha: 1);
     }
     .letter {
-        animation: type .1s ease-out;
+        animation: type 0.1s ease-out;
     }
 }
 @keyframes type {
