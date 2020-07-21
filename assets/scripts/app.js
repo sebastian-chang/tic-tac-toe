@@ -29,7 +29,6 @@ $(() => {
   // Game event listeners
   $('#start-game').on('click', gameEvents.onStartNewGame)
   $('#no-game').on('click', authEvents.onLogout)
-  $('#cpu-game').on('click', gameEvents.onCPUGame)
   $('.game-board .box').on('click', gameEvents.onCellClick)
   $('.restart').on('click', gameEvents.onResetGame)
 })

@@ -108,10 +108,10 @@ application.js
 _SpecRunner.html
 *.woff2
 *.woff
-*.svg
+# *.svg
 *.ttf
 *.eot
-public/
+# public/
 
 ### Ruby ###
 *.gem

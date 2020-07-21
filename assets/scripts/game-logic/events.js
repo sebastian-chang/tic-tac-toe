@@ -82,14 +82,9 @@ const onGetGames = function () {
         .catch(ui.showGamesPlayedFailure)
 }
 
-const onCPUGame = function () {
-    
-}
-
 module.exports = {
     onStartNewGame,
     onCellClick,
     onResetGame,
     onGetGames,
-    onCPUGame,
 }

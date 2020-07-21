@@ -59,16 +59,16 @@ const changePasswordFailure = function () {
 }
 // Switch back to previous view before attempting to change password
 const changePasswordSwitch = function () {
-    $('.new-game, .game-board-view, #change-password-button, #restart').hide()
+    $('.new-game, .game-board-view, .change-password-button, .restart').hide()
     $('.change-password-view').show()
 }
 const changePasswordCancel = function () {
     $('.change-password-view').hide()
-    if (store.game) {
-        $('.game-board-view, #change-password-button, #restart').show()
+    if (store.game.over === false) {
+        $('.game-board-view, .change-password-button, .restart').show()
     }
     else {
-        $('.new-game, #change-password-button').show()
+        $('.new-game, .change-password-button').show()
     }
 }
 
