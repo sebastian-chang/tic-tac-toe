@@ -30,6 +30,9 @@ body {
             }
         }
     }
+    .navbar-toggler-icon {
+        background-image: url('../../public/images/icons/person-circle.svg');
+    }
 }
 
 // Resizing jumbotron to fit nicer with navbar.  Also changing color based off main bg color
