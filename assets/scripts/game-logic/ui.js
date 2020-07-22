@@ -1,6 +1,6 @@
 const store = require('../store')
 const check = require('./game-check')
-const gameEvents = require('./events')
+const comp = require('./cpu-events')
 
 // Start new game or restart a game functions
 const startNewGameSuccess = function (response) {
@@ -27,10 +27,10 @@ const resetGameFailure = function () {
 const makeMoveSuccess = function (response) {
     store.game = response.game
     // Checking to see who just made a move
-    if (store.game.__v % 2 === 1){
+    if (store.game.__v % 2 === 1) {
         $('#message').text('Nice Move X!').removeClass('error')
     }
-    else{
+    else {
         $('#message').text('Nice Move O!').removeClass('error')
     }
     // Checks to see if the game is over
@@ -39,6 +39,13 @@ const makeMoveSuccess = function (response) {
         $('.game-over-modal').modal('show')
         $('.restart').hide()
         $('.new-game').show()
+    }
+    // If there hasnt been a winner after a player's move check to see if 
+    // computer needs to make a move
+    else {
+        if (store.cpu) {
+            comp.cpuMove()
+        }
     }
 }
 

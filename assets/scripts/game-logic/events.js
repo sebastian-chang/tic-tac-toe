@@ -17,6 +17,9 @@ const onStartNewGame = function () {
         .then(ui.startNewGameSuccess)
         .catch(ui.startNewGameFailue)
     onGetGames()
+    // Sets game to be played by player only
+    // This is default
+    store.cpu = false
 }
 
 // Resets game and clears the board
@@ -82,9 +85,17 @@ const onGetGames = function () {
         .catch(ui.showGamesPlayedFailure)
 }
 
+// Sets computer game variable to be true after starting a new game
+// This overwrites the default setting
+const onCPUGame = function () {
+    onStartNewGame()
+    store.cpu = true
+}
+
 module.exports = {
     onStartNewGame,
     onCellClick,
     onResetGame,
     onGetGames,
+    onCPUGame,
 }
