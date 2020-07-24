@@ -51,6 +51,10 @@ const onCellClick = function () {
         $('#message').text('The game is over. Please start a new one.').addClass('error')
         return
     }
+    if (store.cpu && clicked !== 0){
+        $('#message').text('Slow your roll.  Computer is making their move.').addClass('error')
+        return
+    }
 
     // Check to see if a square is already taken up
     if ($(this).text().length === 0) {
