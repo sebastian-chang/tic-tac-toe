@@ -51,11 +51,11 @@ const onCellClick = function () {
         $('#message').text('The game is over. Please start a new one.').addClass('error')
         return
     }
+    // Prevents a user from clicking too quickly
     if (store.cpu && clicked !== 0){
-        $('#message').text('Slow your roll.  Computer is making their move.').addClass('error')
+        $('#message').text('Slow your roll. Computer is making their move.').addClass('error')
         return
     }
-
     // Check to see if a square is already taken up
     if ($(this).text().length === 0) {
         // If not mark square according to player's turn
